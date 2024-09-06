@@ -17,16 +17,8 @@ const Form = ({ onSuccess, onError }) => {
     type: "",
     message: "",
   });
-  const iniFormulaire = {
-    nom: "",
-    prenom: "",
-    email: "",
-    type: "",
-    message: "",
-  };
-  const viderFormulaire = () => {
-    setFormatData(iniFormulaire);
-  };
+  
+ 
 
   const handleChange = (field, value) => {
     setFormatData({ ...formatData, [field]: value });
@@ -40,7 +32,7 @@ const Form = ({ onSuccess, onError }) => {
         await mockContactApi();
         setSending(false);
         onSuccess();
-        viderFormulaire(); // Réinitialiser le formulaire après envoi
+    
       } catch (err) {
         setSending(false);
         onError(err);
