@@ -25,7 +25,6 @@ export const DataProvider = ({ children }) => {
 
     try {
       const events = await api.loadData()
-      console.log(events)
       setData(events);
   
     } catch (err) {

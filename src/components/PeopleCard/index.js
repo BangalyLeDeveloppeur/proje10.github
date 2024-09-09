@@ -15,10 +15,10 @@ const PeopleCard = ({ imageSrc, imageAlt, position, name }) => (
   );
 
 PeopleCard.propTypes = {
-  imageSrc: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
+  imageSrc:PropTypes.string.isRequired,
+  imageAlt:PropTypes.string,
+  name:PropTypes.string.isRequired,
+  position:PropTypes.string.isRequired,
 };
 
 PeopleCard.defaultProps = {

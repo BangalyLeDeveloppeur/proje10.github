@@ -10,7 +10,8 @@ const Slider = () => {
 
   // Trier les événements par date décroissante
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) - new Date(evtB.date) ? -1 : 1
+    //new Date(evtB.date) - new Date(evtA.date)
+    
   );
   const nextCard = useCallback(() => {
     setIndex((prevIndex) =>
@@ -25,9 +26,9 @@ const Slider = () => {
 
   return (
     <div className="SlideCardList">
-      {byDateDesc?.map((event, idx) => (
+      {byDateDesc?.map((event,idx) => (
         <div
-          key={event.title}
+          key={event.idx}
           className={`SlideCard SlideCard--${
             index === idx ? "display" : "hide"
           }`}
@@ -47,13 +48,16 @@ const Slider = () => {
       <div className="SlideCard__paginationContainer">
         <div className="SlideCard__pagination">
           {byDateDesc?.map((_, radioIdx) => (
+            
             <input
-              type="radio"
-              name="radio-button"
-              checked={index === radioIdx}
-              onChange={() => setIndex(radioIdx)} // Permet de changer de carte manuellement
+            type="radio"
+            name="radio-button"
+            checked={index === radioIdx}
+            onChange={() => setIndex(radioIdx)} // Permet de changer de carte manuellement
+          
             />
           ))}
+         
         </div>
       </div>
     </div>
